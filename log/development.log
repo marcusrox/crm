@@ -1,0 +1,559 @@
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (78.0ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (79.0ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateCustomers (20090907193401)
+  [4;36;1mSQL (15.0ms)[0m   [0;1mCREATE TABLE "customers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" text, "phone" varchar(255), "rating" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090907193401')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("customers")[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-09-07 17:12:11) [GET]
+Rendering home/index
+Completed in 141ms (View: 125, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-09-07 17:36:23) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 63ms (View: 63, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mCustomer Load (0.0ms)[0m   [0;1mSELECT "customers".id FROM "customers" WHERE ("customers"."name" = 'teste') LIMIT 1[0m
+  [4;35;1mCustomer Load (0.0ms)[0m   [0mSELECT * FROM "customers" [0m
+  [4;36;1mCustomer Load (0.0ms)[0m   [0;1mSELECT "customers".id FROM "customers" WHERE ("customers"."name" = 'teste') LIMIT 1[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-09-07 19:19:32) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 125ms (View: 94, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-09-07 19:20:59) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 312ms (View: 297, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing CustomersController#index (for 127.0.0.1 at 2009-09-07 19:21:02) [GET]
+  [4;36;1mCustomer Load (0.0ms)[0m   [0;1mSELECT * FROM "customers" [0m
+Rendering template within layouts/customers
+Rendering customers/index
+Completed in 2546ms (View: 2250, DB: 0) | 200 OK [http://localhost/customers]
+
+
+Processing CustomersController#new (for 127.0.0.1 at 2009-09-07 19:21:08) [GET]
+Rendering template within layouts/customers
+Rendering customers/new
+Rendered customers/_form (47.0ms)
+Completed in 156ms (View: 110, DB: 0) | 200 OK [http://localhost/customers/new]
+
+
+Processing CustomersController#create (for 127.0.0.1 at 2009-09-07 19:21:57) [POST]
+  Parameters: {"commit"=>"Save", "authenticity_token"=>"nEwdRRV/qyPrwvC0slKPSoBxSFgYrZRDa4AJ03CZCOc=", "customer"=>{"rating"=>"4", "name"=>"Faculdade Castro Alves", "description"=>"Meu melhor cliente", "phone"=>"33312128"}}
+  [4;35;1mCustomer Load (0.0ms)[0m   [0mSELECT "customers".id FROM "customers" WHERE ("customers"."name" = 'Faculdade Castro Alves') LIMIT 1[0m
+  [4;36;1mCustomer Create (16.0ms)[0m   [0;1mINSERT INTO "customers" ("name", "rating", "updated_at", "description", "phone", "created_at") VALUES('Faculdade Castro Alves', '4', '2009-09-07 22:21:57', 'Meu melhor cliente', '33312128', '2009-09-07 22:21:57')[0m
+Redirected to http://localhost:3000/customers/1
+Completed in 203ms (DB: 16) | 302 Found [http://localhost/customers]
+
+
+Processing CustomersController#show (for 127.0.0.1 at 2009-09-07 19:21:57) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCustomer Load (15.0ms)[0m   [0mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+Rendering template within layouts/customers
+Rendering customers/show
+Completed in 94ms (View: 47, DB: 15) | 200 OK [http://localhost/customers/1]
+
+
+Processing CustomersController#index (for 127.0.0.1 at 2009-09-07 19:22:04) [GET]
+  [4;36;1mCustomer Load (15.0ms)[0m   [0;1mSELECT * FROM "customers" [0m
+Rendering template within layouts/customers
+Rendering customers/index
+Completed in 125ms (View: 63, DB: 15) | 200 OK [http://localhost/customers]
+
+
+Processing CustomersController#show (for 127.0.0.1 at 2009-09-07 19:22:11) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCustomer Load (0.0ms)[0m   [0mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+Rendering template within layouts/customers
+Rendering customers/show
+Completed in 93ms (View: 47, DB: 0) | 200 OK [http://localhost/customers/1]
+
+
+Processing CustomersController#index (for 127.0.0.1 at 2009-09-07 19:22:13) [GET]
+  [4;36;1mCustomer Load (0.0ms)[0m   [0;1mSELECT * FROM "customers" [0m
+Rendering template within layouts/customers
+Rendering customers/index
+Completed in 94ms (View: 62, DB: 0) | 200 OK [http://localhost/customers]
+
+
+Processing CustomersController#edit (for 127.0.0.1 at 2009-09-07 19:22:15) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCustomer Load (0.0ms)[0m   [0mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+Rendering template within layouts/customers
+Rendering customers/edit
+Rendered customers/_form (79.0ms)
+Completed in 203ms (View: 156, DB: 0) | 200 OK [http://localhost/customers/1/edit]
+
+
+Processing CustomersController#index (for 127.0.0.1 at 2009-09-07 19:22:18) [GET]
+  [4;36;1mCustomer Load (0.0ms)[0m   [0;1mSELECT * FROM "customers" [0m
+Rendering template within layouts/customers
+Rendering customers/index
+Completed in 94ms (View: 47, DB: 0) | 200 OK [http://localhost/customers]
+
+
+Processing CustomersController#edit (for 127.0.0.1 at 2009-09-07 19:22:20) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCustomer Load (0.0ms)[0m   [0mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+Rendering template within layouts/customers
+Rendering customers/edit
+Rendered customers/_form (31.0ms)
+Completed in 110ms (View: 63, DB: 0) | 200 OK [http://localhost/customers/1/edit]
+
+
+Processing CustomersController#index (for 127.0.0.1 at 2009-09-07 19:22:23) [GET]
+  [4;36;1mCustomer Load (0.0ms)[0m   [0;1mSELECT * FROM "customers" [0m
+Rendering template within layouts/customers
+Rendering customers/index
+Completed in 94ms (View: 47, DB: 0) | 200 OK [http://localhost/customers]
+
+
+Processing CustomersController#show (for 127.0.0.1 at 2009-09-07 19:22:25) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCustomer Load (0.0ms)[0m   [0mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+Rendering template within layouts/customers
+Rendering customers/show
+Completed in 78ms (View: 31, DB: 0) | 200 OK [http://localhost/customers/1]
+
+
+Processing CustomersController#index (for 127.0.0.1 at 2009-09-07 19:22:27) [GET]
+  [4;36;1mCustomer Load (0.0ms)[0m   [0;1mSELECT * FROM "customers" [0m
+Rendering template within layouts/customers
+Rendering customers/index
+Completed in 109ms (View: 62, DB: 0) | 200 OK [http://localhost/customers]
+
+
+Processing CustomersController#new (for 127.0.0.1 at 2009-09-07 19:23:14) [GET]
+Rendering template within layouts/customers
+Rendering customers/new
+Rendered customers/_form (94.0ms)
+Completed in 281ms (View: 172, DB: 0) | 200 OK [http://localhost/customers/new]
+
+
+Processing CustomersController#create (for 127.0.0.1 at 2009-09-07 19:23:22) [POST]
+  Parameters: {"commit"=>"Save", "authenticity_token"=>"nEwdRRV/qyPrwvC0slKPSoBxSFgYrZRDa4AJ03CZCOc=", "customer"=>{"rating"=>"", "name"=>"", "description"=>"", "phone"=>""}}
+  [4;35;1mCustomer Load (16.0ms)[0m   [0mSELECT "customers".id FROM "customers" WHERE ("customers"."name" = '') LIMIT 1[0m
+Rendering template within layouts/customers
+Rendering customers/new
+Rendered customers/_form (235.0ms)
+Completed in 625ms (View: 500, DB: 16) | 200 OK [http://localhost/customers]
+  [4;36;1mSQL (15.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateCustomers (20090907193401)
+Migrating to CreateProjects (20090907222746)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (15.0ms)[0m   [0mCREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" text, "customer_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090907222746')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("customers")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("projects")[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-07 19:30:35) [GET]
+
+ActionController::RoutingError (No route matches "/c" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-09-07 19:30:38) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 78ms (View: 62, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2009-09-07 19:30:40) [GET]
+  [4;36;1mProject Load (0.0ms)[0m   [0;1mSELECT * FROM "projects" [0m
+Rendering template within layouts/projects
+Rendering projects/index
+Completed in 281ms (View: 94, DB: 0) | 200 OK [http://localhost/projects]
+
+
+Processing ProjectsController#new (for 127.0.0.1 at 2009-09-07 19:30:42) [GET]
+Rendering template within layouts/projects
+Rendering projects/new
+Completed in 125ms (View: 78, DB: 0) | 200 OK [http://localhost/projects/new]
+
+
+Processing ProjectsController#new (for 127.0.0.1 at 2009-09-07 19:35:13) [GET]
+Rendering template within layouts/projects
+Rendering projects/new
+Completed in 157ms (View: 94, DB: 0) | 200 OK [http://localhost/projects/new]
+
+
+Processing CustomersController#index (for 127.0.0.1 at 2009-09-07 19:35:21) [GET]
+  [4;35;1mCustomer Load (0.0ms)[0m   [0mSELECT * FROM "customers" [0m
+Rendering template within layouts/customers
+Rendering customers/index
+Completed in 719ms (View: 94, DB: 0) | 200 OK [http://localhost/customers]
+
+
+Processing CustomersController#edit (for 127.0.0.1 at 2009-09-07 19:35:24) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mCustomer Load (0.0ms)[0m   [0;1mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+Rendering template within layouts/customers
+Rendering customers/edit
+Rendered customers/_form (47.0ms)
+Completed in 172ms (View: 78, DB: 0) | 200 OK [http://localhost/customers/1/edit]
+
+
+Processing CustomersController#update (for 127.0.0.1 at 2009-09-07 19:35:27) [PUT]
+  Parameters: {"commit"=>"Save", "authenticity_token"=>"nEwdRRV/qyPrwvC0slKPSoBxSFgYrZRDa4AJ03CZCOc=", "id"=>"1", "customer"=>{"rating"=>"4", "name"=>"Faculdade Castro Alves", "description"=>"Meu melhor cliente", "phone"=>"33312128"}}
+  [4;35;1mCustomer Load (0.0ms)[0m   [0mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+  [4;36;1mCustomer Load (0.0ms)[0m   [0;1mSELECT "customers".id FROM "customers" WHERE ("customers"."name" = 'Faculdade Castro Alves' AND "customers".id <> 1) LIMIT 1[0m
+Redirected to http://localhost:3000/customers/1
+Completed in 140ms (DB: 0) | 302 Found [http://localhost/customers/1]
+
+
+Processing CustomersController#show (for 127.0.0.1 at 2009-09-07 19:35:28) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCustomer Load (0.0ms)[0m   [0mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+Rendering template within layouts/customers
+Rendering customers/show
+Completed in 125ms (View: 31, DB: 0) | 200 OK [http://localhost/customers/1]
+
+
+Processing CustomersController#index (for 127.0.0.1 at 2009-09-07 19:35:30) [GET]
+  [4;36;1mCustomer Load (0.0ms)[0m   [0;1mSELECT * FROM "customers" [0m
+Rendering template within layouts/customers
+Rendering customers/index
+Completed in 141ms (View: 78, DB: 0) | 200 OK [http://localhost/customers]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2009-09-07 19:35:36) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 47ms (View: 32, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2009-09-07 19:35:38) [GET]
+  [4;35;1mProject Load (0.0ms)[0m   [0mSELECT * FROM "projects" [0m
+Rendering template within layouts/projects
+Rendering projects/index
+Completed in 78ms (View: 16, DB: 0) | 200 OK [http://localhost/projects]
+
+
+Processing ProjectsController#new (for 127.0.0.1 at 2009-09-07 19:35:40) [GET]
+Rendering template within layouts/projects
+Rendering projects/new
+Completed in 109ms (View: 47, DB: 0) | 200 OK [http://localhost/projects/new]
+  [4;36;1mCustomer Load (0.0ms)[0m   [0;1mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+  [4;35;1mCustomer Load (0.0ms)[0m   [0mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+  [4;36;1mCustomer Load (0.0ms)[0m   [0;1mSELECT "customers".id FROM "customers" WHERE ("customers"."name" = 'Faculdade Castro Alves' AND "customers".id <> 1) LIMIT 1[0m
+  [4;35;1mProject Load (0.0ms)[0m   [0mSELECT "projects".id FROM "projects" WHERE ("projects"."name" = 'SGB') LIMIT 1[0m
+  [4;36;1mProject Create (15.0ms)[0m   [0;1mINSERT INTO "projects" ("name", "updated_at", "description", "customer_id", "created_at") VALUES('SGB', '2009-09-07 22:37:30', 'Sistema de Gest�o de Biblioteca', 1, '2009-09-07 22:37:30')[0m
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2009-09-07 19:37:40) [GET]
+  [4;36;1mProject Load (0.0ms)[0m   [0;1mSELECT * FROM "projects" [0m
+Rendering template within layouts/projects
+Rendering projects/index
+  [4;35;1mCustomer Load (0.0ms)[0m   [0mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+Completed in 157ms (View: 94, DB: 0) | 200 OK [http://localhost/projects]
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2009-09-07 19:40:05) [GET]
+  [4;36;1mProject Load (15.0ms)[0m   [0;1mSELECT * FROM "projects" [0m
+Rendering template within layouts/projects
+Rendering projects/index
+  [4;35;1mCustomer Load (0.0ms)[0m   [0mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+Completed in 250ms (View: 188, DB: 15) | 200 OK [http://localhost/projects]
+
+
+Processing ProjectsController#edit (for 127.0.0.1 at 2009-09-07 19:40:08) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProject Load (16.0ms)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 1) [0m
+Rendering template within layouts/projects
+Rendering projects/edit
+  [4;35;1mCustomer Load (0.0ms)[0m   [0mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+Rendered projects/_form (78.0ms)
+Completed in 219ms (View: 156, DB: 16) | 200 OK [http://localhost/projects/1/edit]
+
+
+Processing ProjectsController#edit (for 127.0.0.1 at 2009-09-07 20:04:31) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mCustomer Load (16.0ms)[0m   [0;1mSELECT * FROM "customers" [0m
+  [4;35;1mProject Load (0.0ms)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 1) [0m
+Rendering template within layouts/projects
+Rendering projects/edit
+
+ActionView::TemplateError (undefined method `inject' for true:TrueClass) on line #15 of app/views/projects/_form.html.erb:
+12:   </p>
+13:   <p>
+14:     <%= f.label :customer_id %><br />
+15:     <%= f.select :customer_id, @customers, :prompt => 'Selecione...' %>
+16:   </p>
+17:   <p>
+18:     <%= f.submit 'Save' %>
+
+    app/views/projects/_form.html.erb:15
+    app/views/projects/_form.html.erb:2
+    app/views/projects/edit.html.erb:2
+
+Rendered rescues/_trace (766.0ms)
+Rendered rescues/_request_and_response (31.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ProjectsController#edit (for 127.0.0.1 at 2009-09-07 20:05:33) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mCustomer Load (0.0ms)[0m   [0;1mSELECT * FROM "customers" [0m
+  [4;35;1mProject Load (0.0ms)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 1) [0m
+Rendering template within layouts/projects
+Rendering projects/edit
+Rendered projects/_form (31.0ms)
+Completed in 188ms (View: 63, DB: 0) | 200 OK [http://localhost/projects/1/edit]
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2009-09-07 20:05:42) [GET]
+  [4;36;1mProject Load (15.0ms)[0m   [0;1mSELECT * FROM "projects" [0m
+Rendering template within layouts/projects
+Rendering projects/index
+  [4;35;1mCustomer Load (0.0ms)[0m   [0mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+Completed in 141ms (View: 94, DB: 15) | 200 OK [http://localhost/projects]
+
+
+Processing ProjectsController#new (for 127.0.0.1 at 2009-09-07 20:05:48) [GET]
+  [4;36;1mCustomer Load (0.0ms)[0m   [0;1mSELECT * FROM "customers" [0m
+Rendering template within layouts/projects
+Rendering projects/new
+Rendered projects/_form (31.0ms)
+Completed in 171ms (View: 78, DB: 0) | 200 OK [http://localhost/projects/new]
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2009-09-07 20:05:58) [GET]
+  [4;35;1mProject Load (0.0ms)[0m   [0mSELECT * FROM "projects" [0m
+Rendering template within layouts/projects
+Rendering projects/index
+  [4;36;1mCustomer Load (15.0ms)[0m   [0;1mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+Completed in 141ms (View: 79, DB: 15) | 200 OK [http://localhost/projects]
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2009-09-07 20:06:31) [GET]
+  [4;35;1mProject Load (0.0ms)[0m   [0mSELECT * FROM "projects" [0m
+Rendering template within layouts/projects
+Rendering projects/index
+  [4;36;1mCustomer Load (0.0ms)[0m   [0;1mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+Completed in 531ms (View: 438, DB: 0) | 200 OK [http://localhost/projects]
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2009-09-07 20:06:35) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mProject Load (0.0ms)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 1) [0m
+Rendering template within layouts/projects
+Rendering projects/show
+  [4;36;1mCustomer Load (0.0ms)[0m   [0;1mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+Completed in 172ms (View: 109, DB: 0) | 200 OK [http://localhost/projects/1]
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2009-09-07 20:06:55) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mProject Load (0.0ms)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 1) [0m
+Rendering template within layouts/projects
+Rendering projects/show
+  [4;36;1mCustomer Load (0.0ms)[0m   [0;1mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+Completed in 219ms (View: 141, DB: 0) | 200 OK [http://localhost/projects/1]
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2009-09-07 20:06:58) [GET]
+  [4;35;1mProject Load (0.0ms)[0m   [0mSELECT * FROM "projects" [0m
+Rendering template within layouts/projects
+Rendering projects/index
+  [4;36;1mCustomer Load (0.0ms)[0m   [0;1mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+Completed in 157ms (View: 110, DB: 0) | 200 OK [http://localhost/projects]
+
+
+Processing ProjectsController#edit (for 127.0.0.1 at 2009-09-07 20:07:00) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mCustomer Load (0.0ms)[0m   [0mSELECT * FROM "customers" [0m
+  [4;36;1mProject Load (0.0ms)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 1) [0m
+Rendering template within layouts/projects
+Rendering projects/edit
+Rendered projects/_form (32.0ms)
+Completed in 172ms (View: 62, DB: 0) | 200 OK [http://localhost/projects/1/edit]
+
+
+Processing ProjectsController#update (for 127.0.0.1 at 2009-09-07 20:07:07) [PUT]
+  Parameters: {"commit"=>"Save", "project"=>{"name"=>"SGB", "customer_id"=>"1", "description"=>"Sistema de Gestão de Biblioteca"}, "authenticity_token"=>"nEwdRRV/qyPrwvC0slKPSoBxSFgYrZRDa4AJ03CZCOc=", "id"=>"1"}
+  [4;35;1mCustomer Load (0.0ms)[0m   [0mSELECT * FROM "customers" [0m
+  [4;36;1mProject Load (0.0ms)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 1) [0m
+  [4;35;1mCustomer Load (0.0ms)[0m   [0mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+  [4;36;1mCustomer Load (0.0ms)[0m   [0;1mSELECT "customers".id FROM "customers" WHERE ("customers"."name" = 'Faculdade Castro Alves' AND "customers".id <> 1) LIMIT 1[0m
+  [4;35;1mProject Load (0.0ms)[0m   [0mSELECT "projects".id FROM "projects" WHERE ("projects"."name" = 'SGB' AND "projects".id <> 1) LIMIT 1[0m
+  [4;36;1mProject Update (16.0ms)[0m   [0;1mUPDATE "projects" SET "description" = 'Sistema de Gestão de Biblioteca', "updated_at" = '2009-09-07 23:07:07' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/projects/1
+Completed in 265ms (DB: 16) | 302 Found [http://localhost/projects/1]
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2009-09-07 20:07:08) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mProject Load (16.0ms)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 1) [0m
+Rendering template within layouts/projects
+Rendering projects/show
+  [4;36;1mCustomer Load (15.0ms)[0m   [0;1mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+Completed in 156ms (View: 63, DB: 31) | 200 OK [http://localhost/projects/1]
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2009-09-07 20:07:12) [GET]
+  [4;35;1mProject Load (16.0ms)[0m   [0mSELECT * FROM "projects" [0m
+Rendering template within layouts/projects
+Rendering projects/index
+  [4;36;1mCustomer Load (0.0ms)[0m   [0;1mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+Completed in 156ms (View: 94, DB: 16) | 200 OK [http://localhost/projects]
+
+
+Processing ProjectsController#new (for 127.0.0.1 at 2009-09-07 20:07:56) [GET]
+  [4;35;1mCustomer Load (0.0ms)[0m   [0mSELECT * FROM "customers" [0m
+Rendering template within layouts/projects
+Rendering projects/new
+Rendered projects/_form (31.0ms)
+Completed in 172ms (View: 47, DB: 0) | 200 OK [http://localhost/projects/new]
+
+
+Processing ProjectsController#create (for 127.0.0.1 at 2009-09-07 20:08:13) [POST]
+  Parameters: {"commit"=>"Save", "project"=>{"name"=>"SGF", "customer_id"=>"1", "description"=>"Sistema de Gestão de Biblioteca"}, "authenticity_token"=>"nEwdRRV/qyPrwvC0slKPSoBxSFgYrZRDa4AJ03CZCOc="}
+  [4;36;1mCustomer Load (0.0ms)[0m   [0;1mSELECT * FROM "customers" [0m
+  [4;35;1mCustomer Load (0.0ms)[0m   [0mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+  [4;36;1mCustomer Load (0.0ms)[0m   [0;1mSELECT "customers".id FROM "customers" WHERE ("customers"."name" = 'Faculdade Castro Alves' AND "customers".id <> 1) LIMIT 1[0m
+  [4;35;1mProject Load (0.0ms)[0m   [0mSELECT "projects".id FROM "projects" WHERE ("projects"."name" = 'SGF') LIMIT 1[0m
+  [4;36;1mProject Create (0.0ms)[0m   [0;1mINSERT INTO "projects" ("name", "updated_at", "description", "customer_id", "created_at") VALUES('SGF', '2009-09-07 23:08:13', 'Sistema de Gestão de Biblioteca', 1, '2009-09-07 23:08:13')[0m
+Redirected to http://localhost:3000/projects/2
+Completed in 234ms (DB: 0) | 302 Found [http://localhost/projects]
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2009-09-07 20:08:14) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mProject Load (0.0ms)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) [0m
+Rendering template within layouts/projects
+Rendering projects/show
+  [4;36;1mCustomer Load (0.0ms)[0m   [0;1mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+Completed in 125ms (View: 79, DB: 0) | 200 OK [http://localhost/projects/2]
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2009-09-07 20:08:16) [GET]
+  [4;35;1mProject Load (16.0ms)[0m   [0mSELECT * FROM "projects" [0m
+Rendering template within layouts/projects
+Rendering projects/index
+  [4;36;1mCustomer Load (0.0ms)[0m   [0;1mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+Completed in 204ms (View: 141, DB: 16) | 200 OK [http://localhost/projects]
+
+
+Processing ProjectsController#edit (for 127.0.0.1 at 2009-09-07 20:08:41) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mCustomer Load (15.0ms)[0m   [0;1mSELECT * FROM "customers" [0m
+  [4;35;1mProject Load (0.0ms)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) [0m
+Rendering template within layouts/projects
+Rendering projects/edit
+Rendered projects/_form (32.0ms)
+Completed in 172ms (View: 62, DB: 15) | 200 OK [http://localhost/projects/2/edit]
+
+
+Processing ProjectsController#update (for 127.0.0.1 at 2009-09-07 20:08:48) [PUT]
+  Parameters: {"commit"=>"Save", "project"=>{"name"=>"SGF", "customer_id"=>"1", "description"=>"Sistema de Gestão Financeira"}, "authenticity_token"=>"nEwdRRV/qyPrwvC0slKPSoBxSFgYrZRDa4AJ03CZCOc=", "id"=>"2"}
+  [4;36;1mCustomer Load (0.0ms)[0m   [0;1mSELECT * FROM "customers" [0m
+  [4;35;1mProject Load (0.0ms)[0m   [0mSELECT * FROM "projects" WHERE ("projects"."id" = 2) [0m
+  [4;36;1mCustomer Load (15.0ms)[0m   [0;1mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+  [4;35;1mCustomer Load (0.0ms)[0m   [0mSELECT "customers".id FROM "customers" WHERE ("customers"."name" = 'Faculdade Castro Alves' AND "customers".id <> 1) LIMIT 1[0m
+  [4;36;1mProject Load (0.0ms)[0m   [0;1mSELECT "projects".id FROM "projects" WHERE ("projects"."name" = 'SGF' AND "projects".id <> 2) LIMIT 1[0m
+  [4;35;1mProject Update (15.0ms)[0m   [0mUPDATE "projects" SET "description" = 'Sistema de Gestão Financeira', "updated_at" = '2009-09-07 23:08:49' WHERE "id" = 2[0m
+Redirected to http://localhost:3000/projects/2
+Completed in 375ms (DB: 30) | 302 Found [http://localhost/projects/2]
+
+
+Processing ProjectsController#show (for 127.0.0.1 at 2009-09-07 20:08:50) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mProject Load (0.0ms)[0m   [0;1mSELECT * FROM "projects" WHERE ("projects"."id" = 2) [0m
+Rendering template within layouts/projects
+Rendering projects/show
+  [4;35;1mCustomer Load (0.0ms)[0m   [0mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+Completed in 156ms (View: 94, DB: 0) | 200 OK [http://localhost/projects/2]
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2009-09-07 20:08:52) [GET]
+  [4;36;1mProject Load (16.0ms)[0m   [0;1mSELECT * FROM "projects" [0m
+Rendering template within layouts/projects
+Rendering projects/index
+  [4;35;1mCustomer Load (0.0ms)[0m   [0mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+Completed in 187ms (View: 109, DB: 16) | 200 OK [http://localhost/projects]
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2009-09-07 20:09:07) [GET]
+  [4;35;1mProject Load (0.0ms)[0m   [0mSELECT * FROM "projects" [0m
+Rendering template within layouts/projects
+Rendering projects/index
+  [4;36;1mCustomer Load (0.0ms)[0m   [0;1mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+Completed in 188ms (View: 125, DB: 0) | 200 OK [http://localhost/projects]
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2009-09-07 20:10:32) [GET]
+  [4;36;1mProject Load (0.0ms)[0m   [0;1mSELECT * FROM "projects" [0m
+  [4;35;1mCustomer Load (15.0ms)[0m   [0mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+Rendering template within layouts/projects
+Rendering projects/index
+Completed in 203ms (View: 78, DB: 15) | 200 OK [http://localhost/projects]
+
+
+Processing ProjectsController#index (for 127.0.0.1 at 2009-09-07 20:11:47) [GET]
+  [4;36;1mProject Load (0.0ms)[0m   [0;1mSELECT * FROM "projects" ORDER BY name[0m
+  [4;35;1mCustomer Load (0.0ms)[0m   [0mSELECT * FROM "customers" WHERE ("customers"."id" = 1) [0m
+Rendering template within layouts/projects
+Rendering projects/index
+Completed in 219ms (View: 63, DB: 0) | 200 OK [http://localhost/projects]
